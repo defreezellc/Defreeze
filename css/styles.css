@@ -52,7 +52,7 @@ header {
 .logo-img {
     height: 85px;
     width: auto;
-    object-fit: contain;
+    max-width: 220px;
 }
 
 .nav-links {
