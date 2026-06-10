@@ -6,6 +6,7 @@
    - Mobile hamburger menu toggle
    - Sidebar drawer open/close functionality
    - Click-outside detection to close drawer
+   - Close arrow in sidebar header
    ================================================================ */
 
 /* ================================================================
@@ -32,6 +33,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
    
    Functionality:
    - Click hamburger to toggle sidebar visibility
+   - Click close arrow in header to close drawer
    - Click nav links to close drawer
    - Click outside drawer to close it
    - Hamburger icon transforms to X when open
@@ -48,6 +50,16 @@ if (hamburger && sidebar) {
     const isOpen = sidebar.classList.toggle('open');
     hamburger.classList.toggle('active', isOpen);
     hamburger.setAttribute('aria-expanded', isOpen);
+  });
+
+  // Close drawer when sidebar header (close arrow) is clicked
+  sidebar.addEventListener('click', (e) => {
+    // Check if click is within the top 70px (header area) and left side
+    if (e.pageY < 70 && e.pageX - sidebar.offsetLeft < 280) {
+      sidebar.classList.remove('open');
+      hamburger.classList.remove('active');
+      hamburger.setAttribute('aria-expanded', 'false');
+    }
   });
 
   // Close drawer when any nav link is clicked
