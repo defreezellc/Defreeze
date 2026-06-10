@@ -649,10 +649,9 @@ footer a:hover {
   }
 }
 /* ============================================
-   FIX: Header / Logo Centering + Hamburger Visibility
+   HAMBURGER + IMPROVED MOBILE DRAWER (stronger version)
    ============================================ */
 
-/* Base state: Hamburger hidden on desktop */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -677,84 +676,89 @@ footer a:hover {
   border-radius: 2px;
 }
 
-/* Desktop: Keep logo nicely centered */
+/* Desktop centering */
 @media (min-width: 769px) {
   .navbar {
     justify-content: center;
   }
-  
   .logo-container {
     width: 100%;
     justify-content: center;
   }
 }
 
-/* Mobile: Show hamburger + fix layout */
+/* Mobile drawer improvements */
 @media (max-width: 768px) {
   header {
-    min-height: 80px;
-    padding: 12px 0;
+    min-height: 80px !important;
+    padding: 12px 0 !important;
   }
 
   .logo-img {
-    height: 60px;
+    height: 60px !important;
   }
 
   .navbar {
-    justify-content: space-between;
-    padding: 0 16px;
+    justify-content: space-between !important;
+    padding: 0 16px !important;
   }
 
   .logo-container {
-    width: auto;
-    justify-content: flex-start;
+    width: auto !important;
+    justify-content: flex-start !important;
   }
 
   .hamburger {
-    display: flex;
+    display: flex !important;
   }
-}
-/* ============================================
-   IMPROVED MOBILE DRAWER STYLING
-   ============================================ */
 
-@media (max-width: 768px) {
   .sidebar {
-    background-color: #ffffff;
-    border-right: 4px solid var(--primary-blue);
-    box-shadow: 8px 0 30px rgba(0, 0, 0, 0.2);
-    padding: 90px 24px 40px 24px; /* more breathing room */
-    width: 300px;
-    max-width: 82vw;
+    background-color: #ffffff !important;
+    border-right: 4px solid var(--primary-blue) !important;
+    box-shadow: 8px 0 30px rgba(0, 0, 0, 0.25) !important;
+    padding: 90px 24px 40px 24px !important;
+    width: 300px !important;
+    max-width: 82vw !important;
+    transform: translateX(-100%) !important;
+    transition: transform 0.3s ease !important;
+  }
+
+  .sidebar.open {
+    transform: translateX(0) !important;
   }
 
   .sidebar .nav-links {
-    gap: 1.25rem;
+    gap: 1.25rem !important;
   }
 
   .sidebar .nav-links a {
-    font-size: 1.15rem;
-    padding: 12px 16px;
-    border-radius: 8px;
-    transition: all 0.2s ease;
-    display: block;
+    font-size: 1.15rem !important;
+    padding: 14px 18px !important;
+    border-radius: 8px !important;
+    display: block !important;
+    transition: all 0.2s ease !important;
   }
 
   .sidebar .nav-links a:hover,
   .sidebar .nav-links a:active {
-    background-color: #f0f4f8;
-    color: var(--accent-red);
-    transform: translateX(6px);
+    background-color: #f0f4f8 !important;
+    color: var(--accent-red) !important;
+    transform: translateX(8px) !important;
   }
 
-  /* Stronger overlay behind the drawer */
   .sidebar.open::before {
-    background: rgba(0, 0, 0, 0.55);
-    backdrop-filter: blur(2px);
+    content: '' !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    background: rgba(0, 0, 0, 0.6) !important;
+    backdrop-filter: blur(3px) !important;
+    z-index: -1 !important;
   }
 
-  /* Make hamburger X a bit cleaner */
   .hamburger.active span {
-    background-color: var(--accent-red);
+    background-color: var(--accent-red) !important;
   }
 }
