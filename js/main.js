@@ -30,32 +30,35 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 /* ================================================================
    MOBILE HAMBURGER MENU & SIDEBAR DRAWER
-   
-   Functionality:
-   - Click hamburger to toggle sidebar visibility
-   - Click close arrow in header to close drawer
-   - Click nav links to close drawer
-   - Click outside drawer to close it
-   - Hamburger icon transforms to X when open
    ================================================================ */
 
 const hamburger = document.querySelector('.hamburger');
 const sidebar = document.querySelector('.sidebar');
 
-// Only run if both elements exist
 if (hamburger && sidebar) {
   
-  // Toggle drawer open/close when hamburger is clicked
+  // Toggle drawer when hamburger is clicked
   hamburger.addEventListener('click', () => {
     const isOpen = sidebar.classList.toggle('open');
     hamburger.classList.toggle('active', isOpen);
     hamburger.setAttribute('aria-expanded', isOpen);
   });
 
-  // Close drawer when sidebar header (close arrow) is clicked
+  // === UPDATED: Close drawer when clicking the right-side triangle or top header area ===
   sidebar.addEventListener('click', (e) => {
-    // Check if click is within the top 70px (header area) and left side
-    if (e.pageY < 70 && e.pageX - sidebar.offsetLeft < 280) {
+    const rect = sidebar.getBoundingClientRect();
+    const clickX = e.clientX - rect.left;   // X position inside sidebar
+    const clickY = e.clientY - rect.top;    // Y position inside sidebar
+
+    const sidebarWidth = rect.width;
+
+    // Close if:
+    // 1. Click is in the top \~80px (old header area safety net), OR
+    // 2. Click is within \~45px of the RIGHT edge (where the new triangle lives)
+    const clickedTopHeader = clickY < 80;
+    const clickedRightTriangle = clickX > (sidebarWidth - 45);
+
+    if (clickedTopHeader || clickedRightTriangle) {
       sidebar.classList.remove('open');
       hamburger.classList.remove('active');
       hamburger.setAttribute('aria-expanded', 'false');
@@ -71,9 +74,8 @@ if (hamburger && sidebar) {
     });
   });
 
-  // Close drawer when user clicks outside of it
+  // Close drawer when clicking outside
   document.addEventListener('click', (e) => {
-    // Check if click is outside both sidebar and hamburger
     if (!sidebar.contains(e.target) && !hamburger.contains(e.target)) {
       sidebar.classList.remove('open');
       hamburger.classList.remove('active');
@@ -82,5 +84,4 @@ if (hamburger && sidebar) {
   });
 }
 
-// Log that page has loaded successfully
 console.log('DeFreeze Heating and Cooling website loaded successfully');
