@@ -553,22 +553,22 @@ footer a:hover {
         width: 280px !important;
         max-width: 85vw !important;
         height: 100vh !important;
-        background-color: var(--bg-white) !important;
-        border-right: 4px solid var(--primary-blue) !important;
+        background: linear-gradient(180deg, var(--primary-blue) 0%, rgba(30, 91, 168, 0.95) 100%) !important;
+        border-right: 4px solid var(--accent-red) !important;
         border-bottom: none !important;
-        padding: 80px 0 40px 0 !important;
-        overflow-y: auto !important;
+        padding: 0 !important;
+        overflow: hidden !important;
         transform: translateX(-100%) !important;
         transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1) !important;
         z-index: 150 !important;
-        box-shadow: 4px 0 20px rgba(0, 0, 0, 0.15) !important;
+        box-shadow: 4px 0 30px rgba(0, 0, 0, 0.25) !important;
         border-radius: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
     }
 
     .sidebar.open {
         transform: translateX(0) !important;
-        display: flex !important;
-        flex-direction: column !important;
     }
 
     /* Scrim overlay when drawer is open */
@@ -584,38 +584,71 @@ footer a:hover {
         z-index: -1 !important;
     }
 
+    /* Drawer header with close hint */
+    .sidebar::after {
+        content: 'MENU' !important;
+        display: block !important;
+        color: var(--bg-white) !important;
+        font-weight: 700 !important;
+        font-size: 0.9rem !important;
+        letter-spacing: 2px !important;
+        padding: 20px 16px 15px !important;
+        border-bottom: 2px solid rgba(255, 255, 255, 0.2) !important;
+    }
+
     .sidebar .nav-links {
         display: flex !important;
         flex-direction: column !important;
         list-style: none !important;
-        gap: 0.5rem !important;
+        gap: 0 !important;
         margin: 0 !important;
-        padding: 0 8px !important;
+        padding: 0 !important;
+        flex: 1 !important;
+        overflow: hidden !important;
     }
 
     .sidebar .nav-links li {
         border: none !important;
+        flex: 0 0 auto !important;
     }
 
     .sidebar .nav-links a {
-        color: var(--text-dark) !important;
-        font-size: 1.1rem !important;
-        padding: 14px 18px !important;
-        border-radius: 8px !important;
-        display: block !important;
+        color: var(--bg-white) !important;
+        font-size: 1.15rem !important;
+        padding: 18px 20px !important;
+        border-radius: 0 !important;
+        display: flex !important;
+        align-items: center !important;
         width: 100% !important;
         text-decoration: none !important;
-        font-weight: 500 !important;
-        border-left: 4px solid transparent !important;
+        font-weight: 600 !important;
+        border-left: none !important;
+        border-right: 4px solid transparent !important;
+        transition: all 0.25s ease !important;
+        text-transform: uppercase !important;
+        letter-spacing: 1px !important;
+        font-size: 1rem !important;
+    }
+
+    .sidebar .nav-links a::before {
+        content: '→' !important;
+        margin-right: 12px !important;
+        opacity: 0 !important;
         transition: all 0.25s ease !important;
     }
 
     .sidebar .nav-links a:hover,
     .sidebar .nav-links a:active {
-        background-color: rgba(30, 91, 168, 0.08) !important;
-        color: var(--primary-blue) !important;
-        border-left-color: var(--accent-red) !important;
-        padding-left: 22px !important;
+        background-color: rgba(255, 255, 255, 0.15) !important;
+        color: var(--bg-white) !important;
+        border-right-color: var(--accent-red) !important;
+        padding-left: 24px !important;
+    }
+
+    .sidebar .nav-links a:hover::before,
+    .sidebar .nav-links a:active::before {
+        opacity: 1 !important;
+        margin-right: 16px !important;
     }
 
     /* ===== GENERAL MOBILE LAYOUT TWEAKS ===== */
@@ -689,5 +722,10 @@ footer a:hover {
     .sidebar {
         width: 240px !important;
         max-width: 80vw !important;
+    }
+
+    .sidebar .nav-links a {
+        font-size: 1rem !important;
+        padding: 16px 16px !important;
     }
 }
