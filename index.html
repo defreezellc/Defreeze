@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <head>
+  <!-- ================================================================
+       META & SEO SECTION
+       ================================================================ -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
+  <!-- Page Title & Meta Description for SEO -->
   <title>DeFreeze Heating and Cooling, LLC | HVAC Taos County &amp; Northern New Mexico</title>
+  <meta name="description" content="Licensed HVAC contractor in Taos County &amp; Northern New Mexico. Professional heating, cooling, refrigeration, mini-split installation &amp; repair. 24/7 emergency service. (575) 779-5277">
   
-  <!-- SEO Description -->
-  <meta name="description" content="Licensed HVAC contractor in Taos County &amp; Northern New Mexico. Professional heating, cooling, refrigeration, mini-split installation &amp; repair. 24/7 emergency service. License #401521. Get a free quote today.">
-
-  <!-- Open Graph / Social Sharing -->
+  <!-- Open Graph / Social Media Meta Tags -->
   <meta property="og:title" content="DeFreeze Heating and Cooling, LLC | HVAC Taos &amp; Northern NM">
   <meta property="og:description" content="Expert heating, cooling, and refrigeration services in Taos County. Licensed &amp; insured contractor. 24/7 emergency repair available.">
   <meta property="og:image" content="https://defreezellc.github.io/defreeze/Images/Defreeze-Logo.png">
@@ -18,11 +19,14 @@
   <meta property="og:type" content="website">
   <meta property="og:locale" content="en_US">
 
-  <!-- Local Business Structured Data (helps Google show your business info) -->
+  <!-- ================================================================
+       LOCAL BUSINESS STRUCTURED DATA (Schema.org)
+       Helps search engines display business info in Knowledge Panels
+       ================================================================ -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "HVACBusiness",
+    "@type": "LocalBusiness",
     "name": "DeFreeze Heating and Cooling, LLC",
     "description": "Professional HVAC, heating, cooling, and refrigeration services serving Taos County and Northern New Mexico.",
     "url": "https://defreezellc.github.io/defreeze/",
@@ -47,9 +51,7 @@
     "hasMap": "https://maps.google.com/?q=Carson+NM+87517",
     "openingHoursSpecification": {
       "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
-      ],
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
       "opens": "09:00",
       "closes": "17:00"
     },
@@ -58,189 +60,235 @@
   }
   </script>
 
-  <link rel="stylesheet" href="css/styles1.css">
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
 </head>
-</head>
+
 <body>
-    <!-- Navigation Header - Logo now takes up the entire top bar -->
-    <header>
-  <nav class="navbar">
-    <div class="logo-container">
-      <img src="Images/Defreeze-Logo.png" alt="DeFreeze Heating & Cooling Logo" class="logo-img">
+  <!-- ================================================================
+       HEADER SECTION
+       Logo spans full width of header
+       ================================================================ -->
+  <header>
+    <nav class="navbar">
+      <div class="logo-container">
+        <img src="Images/Defreeze-Logo.png" alt="DeFreeze Heating &amp; Cooling Logo" class="logo-img">
+      </div>
+
+      <!-- Hamburger Menu Button (Mobile Only) -->
+      <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- ================================================================
+       MAIN CONTENT WRAPPER
+       Flexbox container: sidebar + main content side-by-side
+       ================================================================ -->
+  <div class="content-wrapper">
+    
+    <!-- ================================================================
+         SIDEBAR NAVIGATION
+         Sticky navigation that transforms into mobile drawer
+         ================================================================ -->
+    <aside class="sidebar">
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </aside>
+
+    <!-- ================================================================
+         MAIN PAGE CONTENT
+         Contains all page sections
+         ================================================================ -->
+    <div class="main-content">
+      <main>
+        <!-- ============================================================
+             HERO SECTION
+             Main call-to-action with headline and image
+             ============================================================ -->
+        <section id="home" class="hero">
+          <div class="container">
+            <div class="hero-content">
+              <h1>Expert Heating &amp; Cooling Solutions</h1>
+              <p>Serving Northern New Mexico with Professional HVAC &amp; Refrigeration Services</p>
+              <a href="#contact" class="cta-button">Get a Free Quote</a>
+            </div>
+          </div>
+          <div class="hero-images">
+            <img src="Images/Manifold.jpg" alt="AC Unit Installation with manifold gauges" class="hero-img">
+          </div>
+        </section>
+
+        <!-- ============================================================
+             SERVICES SECTION
+             Grid of service cards highlighting offerings
+             ============================================================ -->
+        <section id="services" class="services">
+          <div class="container">
+            <h2>Our Services</h2>
+            <div class="services-grid">
+              
+              <!-- Heating Installation & Repair -->
+              <div class="service-card">
+                <img src="Images/Fujitsu-outdoor.jpg" alt="Heating system installation with Fujitsu outdoor unit">
+                <h3>Heating Installation &amp; Repair</h3>
+                <p>Keep warm all winter with professional heating system installation and reliable repair services for your home or business.</p>
+              </div>
+
+              <!-- Cooling Systems -->
+              <div class="service-card">
+                <img src="Images/Fujitsu-indoor.jpg" alt="Cooling system with Fujitsu indoor unit">
+                <h3>Cooling Systems</h3>
+                <p>Stay cool and comfortable with high-efficiency air conditioning and cooling solutions tailored to your needs.</p>
+              </div>
+
+              <!-- Refrigeration Services -->
+              <div class="service-card">
+                <img src="Images/Mitsubishi-outdoor.jpg" alt="Refrigeration unit with Mitsubishi outdoor equipment">
+                <h3>Refrigeration Services</h3>
+                <p>Commercial and residential refrigeration maintenance and repair for all your cooling needs.</p>
+              </div>
+
+              <!-- Maintenance Plans -->
+              <div class="service-card">
+                <h3>🔧 Maintenance Plans</h3>
+                <p>Regular maintenance keeps your systems running efficiently and extends their lifespan with our proven service plans.</p>
+              </div>
+
+              <!-- Emergency Repair -->
+              <div class="service-card">
+                <h3>⚡ Emergency Repair</h3>
+                <p>Available 24/7 for emergency calls. We respond quickly to get your systems back online fast.</p>
+              </div>
+
+              <!-- Commercial & Residential -->
+              <div class="service-card">
+                <h3>🏢 Commercial &amp; Residential</h3>
+                <p>Full-service HVAC solutions for both commercial and residential properties throughout Northern New Mexico.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============================================================
+             ABOUT SECTION
+             Company info, benefits, and credentials
+             ============================================================ -->
+        <section id="about" class="about">
+          <div class="container">
+            <div class="about-content">
+              
+              <!-- About Text Column -->
+              <div class="about-text">
+                <h2>Why Choose DeFreeze?</h2>
+                <p>DeFreeze Heating and Cooling, LLC specializes in professional Heating, Cooling, and Refrigeration services throughout Northern New Mexico. We serve Commercial and Residential clients with licensed, insured, and experienced technicians dedicated to your comfort and satisfaction.</p>
+                
+                <!-- Key Benefits List -->
+                <ul class="benefits-list">
+                  <li>✓ Licensed &amp; Insured Contractor</li>
+                  <li>✓ 24/7 Emergency Service Available</li>
+                  <li>✓ Professional Installation &amp; Repair</li>
+                  <li>✓ Serving Taos County &amp; Surrounding Areas</li>
+                  <li>✓ Experienced &amp; Reliable Team</li>
+                </ul>
+              </div>
+
+              <!-- License & Credentials Column -->
+              <div class="about-license">
+                <h3>Licensed &amp; Certified</h3>
+                <img src="Images/License.jpg" alt="DeFreeze HVAC License Certificate from New Mexico">
+                <p><strong>License #401521</strong><br>State of New Mexico - Construction Industries Division</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============================================================
+             CONTACT SECTION
+             Contact information and call-to-action buttons
+             ============================================================ -->
+        <section id="contact" class="contact">
+          <div class="container">
+            <h2>Contact Us Today</h2>
+            <div class="contact-content">
+              
+              <!-- Contact Information -->
+              <div class="contact-info">
+                <h3>Get in Touch</h3>
+                
+                <div class="info-item">
+                  <strong>📞 Phone:</strong>
+                  <a href="tel:+15757795277">(575) 779-5277</a>
+                </div>
+                
+                <div class="info-item">
+                  <strong>📧 Email:</strong>
+                  <a href="mailto:defreezellc@gmail.com">defreezellc@gmail.com</a>
+                </div>
+                
+                <div class="info-item">
+                  <strong>📍 Address:</strong>
+                  <p>PO BOX 4<br>Carson, NM 87517</p>
+                </div>
+                
+                <div class="info-item">
+                  <strong>🕐 Hours:</strong>
+                  <p>24/7 Emergency Service<br>Regular Hours: 9am-5pm</p>
+                </div>
+                
+                <div class="info-item">
+                  <strong>🗺️ Service Areas:</strong>
+                  <p>Taos County<br>Taos • Questa • El Prado<br>Ranchos de Taos<br>Northern New Mexico</p>
+                </div>
+              </div>
+
+              <!-- Contact Call-to-Action -->
+              <div class="contact-actions">
+                <a href="tel:+15757795277" class="cta-button contact-phone-btn">
+                  📞 Call or Text Now<br>
+                  <span class="phone-number">(575) 779-5277</span>
+                </a>
+
+                <div class="email-section">
+                  <a href="mailto:defreezellc@gmail.com" class="email-link">
+                    ✉️ defreezellc@gmail.com
+                  </a>
+                </div>
+
+                <p class="contact-note">
+                  Fastest response by phone or text.<br>
+                  We typically reply within a few hours during regular business hours.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
     </div>
-
-    <!-- NEW: Hamburger button (only shows on mobile) -->
-    <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-  </nav>
-</header>
-
-    <!-- NEW: Content Wrapper with Sidebar Navigation -->
-    <div class="content-wrapper">
-        
-        <!-- Sidebar Navigation (moved here) -->
-        <aside class="sidebar">
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </aside>
-
-        <!-- Main Page Content -->
-        <div class="main-content">
-            <main>
-                <!-- Hero Section -->
-                <section id="home" class="hero">
-                    <div class="container">
-                        <div class="hero-content">
-                            <h1>Expert Heating & Cooling Solutions</h1>
-                            <p>Serving Northern New Mexico with Professional HVAC & Refrigeration Services</p>
-                            <a href="#contact" class="cta-button">Get a Free Quote</a>
-                        </div>
-                    </div>
-                    <div class="hero-images">
-                        <img src="Images/Manifold.jpg" alt="AC Unit Installation" class="hero-img">
-                    </div>
-                </section>
-
-                <!-- Services Section -->
-                <section id="services" class="services">
-                    <div class="container">
-                        <h2>Our Services</h2>
-                        <div class="services-grid">
-                            <div class="service-card">
-                                <img src="Images/Fujitsu-outdoor.jpg" alt="Heating Installation">
-                                <h3>Heating Installation & Repair</h3>
-                                <p>Keep warm all winter with professional heating system installation and reliable repair services for your home or business.</p>
-                            </div>
-                            <div class="service-card">
-                                <img src="Images/Fujitsu-indoor.jpg" alt="Cooling Systems">
-                                <h3>Cooling Systems</h3>
-                                <p>Stay cool and comfortable with high-efficiency air conditioning and cooling solutions tailored to your needs.</p>
-                            </div>
-                            <div class="service-card">
-                                <img src="Images/Mitsubishi-outdoor.jpg" alt="Refrigeration">
-                                <h3>Refrigeration Services</h3>
-                                <p>Commercial and residential refrigeration maintenance and repair for all your cooling needs.</p>
-                            </div>
-                            <div class="service-card">
-                                <h3>🔧 Maintenance Plans</h3>
-                                <p>Regular maintenance keeps your systems running efficiently and extends their lifespan with our proven service plans.</p>
-                            </div>
-                            <div class="service-card">
-                                <h3>⚡ Emergency Repair</h3>
-                                <p>Available 24/7 for emergency calls. We respond quickly to get your systems back online fast.</p>
-                            </div>
-                            <div class="service-card">
-                                <h3>🏢 Commercial & Residential</h3>
-                                <p>Full-service HVAC solutions for both commercial and residential properties throughout Northern New Mexico.</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- About Section -->
-                <section id="about" class="about">
-                    <div class="container">
-                        <div class="about-content">
-                            <div class="about-text">
-                                <h2>Why Choose DeFreeze?</h2>
-                                <p>DeFreeze Heating and Cooling, LLC specializes in professional Heating, Cooling, and Refrigeration services throughout Northern New Mexico. We serve Commercial and Residential customers with:</p>
-                                <ul class="benefits-list">
-                                    <li>✓ Licensed & Insured Contractor</li>
-                                    <li>✓ 24/7 Emergency Service Available</li>
-                                    <li>✓ Professional Installation & Repair</li>
-                                    <li>✓ Serving Taos County & Surrounding Areas</li>
-                                    <li>✓ Experienced & Reliable Team</li>
-                                </ul>
-                            </div>
-                            <div class="about-license">
-                                <h3>Licensed & Certified</h3>
-                                <img src="Images/License.jpg" alt="DeFreeze License Certificate">
-                                <p><strong>License #401521</strong><br>State of New Mexico - Construction Industries Division</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Contact Section -->
-                <section id="contact" class="contact">
-                    <div class="container">
-                        <h2>Contact Us Today</h2>
-                        <div class="contact-content">
-                            <div class="contact-info">
-                                <h3>Get in Touch</h3>
-                                
-                                <div class="info-item">
-                                    <strong>📞 Phone:</strong>
-                                    <a href="tel:+15757795277">(575) 779-5277</a>
-                                </div>
-                                
-                                <div class="info-item">
-                                    <strong>📧 Email:</strong>
-                                    <a href="mailto:defreezellc@gmail.com">defreezellc@gmail.com</a>
-                                </div>
-                                
-                                <div class="info-item">
-                                    <strong>📍 Address:</strong>
-                                    <p>PO BOX 4<br>Carson, NM 87517</p>
-                                </div>
-                                
-                                <div class="info-item">
-                                    <strong>🕐 Hours:</strong>
-                                    <p>24/7 Emergency Service<br>Regular Hours: 9am-5pm</p>
-                                </div>
-                                
-                                <div class="info-item">
-                                    <strong>🗺️ Service Areas:</strong>
-                                    <p>Taos County<br>Taos • Questa • El Prado<br>Ranchos de Taos<br>Northern New Mexico</p>
-                                </div>
-                            </div>
-
-                            <!-- Stronger contact actions (no form) -->
-<div class="contact-actions" style="margin-top: 1.5rem; text-align: center;">
-  <a href="tel:+15757795277" 
-     class="cta-button" 
-     style="display: inline-block; font-size: 1.1rem; padding: 1rem 2rem; margin-bottom: 1rem; width: 100%; max-width: 320px;">
-    📞 Call or Text Now<br>
-    <span style="font-size: 1.4rem; font-weight: 700;">(575) 779-5277</span>
-  </a>
-
-  <div style="margin: 1.25rem 0;">
-    <a href="mailto:defreezellc@gmail.com" 
-       style="color: var(--primary-blue); text-decoration: none; font-weight: 600;">
-      ✉️ defreezellc@gmail.com
-    </a>
   </div>
 
-  <p style="color: #555; font-size: 0.95rem; max-width: 420px; margin: 0 auto;">
-    Fastest response by phone or text.<br>
-    We typically reply within a few hours during regular business hours.
-  </p>
-</div>
-                        </div>
-                    </div>
-                </section>
-            </main>
-        </div>
+  <!-- ================================================================
+       FOOTER
+       Copyright and quick contact links
+       ================================================================ -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 DeFreeze Heating and Cooling, LLC. All rights reserved.</p>
+      <p>
+        <a href="tel:+15757795277">(575) 779-5277</a> | 
+        <a href="mailto:defreezellc@gmail.com">defreezellc@gmail.com</a>
+      </p>
     </div>
+  </footer>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 DeFreeze Heating and Cooling, LLC. All rights reserved.</p>
-            <p>
-                <a href="tel:+15757795277">(575) 779-5277</a> | 
-                <a href="mailto:defreezellc@gmail.com">defreezellc@gmail.com</a>
-            </p>
-        </div>
-    </footer>
-
-    <script src="js/main.js"></script>
+  <!-- JavaScript -->
+  <script src="js/main.js"></script>
 </body>
 </html>
