@@ -554,3 +554,97 @@ footer a:hover {
         font-size: 0.95rem;
     }
 }
+/* ============================================
+   HAMBURGER MENU + MOBILE DRAWER
+   ============================================ */
+
+/* Hamburger button - hidden on desktop */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 200;
+}
+
+.hamburger span {
+  display: block;
+  width: 26px;
+  height: 3px;
+  background-color: var(--primary-blue);
+  margin: 3px 0;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  /* Make header shorter and turn into flex row */
+  header {
+    min-height: 80px;
+    padding: 12px 0;
+  }
+
+  .logo-img {
+    height: 60px;
+  }
+
+  .navbar {
+    justify-content: space-between;
+    padding: 0 16px;
+  }
+
+  /* Show hamburger */
+  .hamburger {
+    display: flex;
+  }
+
+  /* Sidebar becomes slide-in drawer on mobile */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 280px;
+    max-width: 80vw;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 150;
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.15);
+    border-radius: 0 12px 12px 0;
+    padding-top: 80px; /* space for header */
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  /* Optional: nice overlay behind drawer */
+  .sidebar.open::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: -1;
+  }
+
+  /* When drawer is open, hamburger turns into X */
+  .hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+}
