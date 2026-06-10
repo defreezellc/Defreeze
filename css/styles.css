@@ -554,163 +554,36 @@ footer a:hover {
         font-size: 0.95rem;
     }
 }
-/* ============================================
-   HAMBURGER MENU + MOBILE DRAWER
-   ============================================ */
+/* HAMBURGER + VERTICAL MENU - CLEAN VERSION */
 
-/* Hamburger button - hidden on desktop */
 .hamburger {
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 48px;
-  height: 48px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 8px;
-  z-index: 200;
+  display: none !important;
 }
 
-.hamburger span {
-  display: block;
-  width: 26px;
-  height: 3px;
-  background-color: var(--primary-blue);
-  margin: 3px 0;
-  transition: all 0.3s ease;
-  border-radius: 2px;
-}
-
-/* Mobile styles */
 @media (max-width: 768px) {
-  /* Make header shorter and turn into flex row */
-  header {
-    min-height: 80px;
-    padding: 12px 0;
-  }
-
-  .logo-img {
-    height: 60px;
-  }
-
-  .navbar {
-    justify-content: space-between;
-    padding: 0 16px;
-  }
-
-  /* Show hamburger */
   .hamburger {
-    display: flex;
-  }
-
-  /* Sidebar becomes slide-in drawer on mobile */
-  .sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 280px;
-    max-width: 80vw;
-    transform: translateX(-100%);
-    transition: transform 0.3s ease;
-    z-index: 150;
-    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.15);
-    border-radius: 0 12px 12px 0;
-    padding-top: 80px; /* space for header */
-  }
-
-  .sidebar.open {
-    transform: translateX(0);
-  }
-
-  /* Optional: nice overlay behind drawer */
-  .sidebar.open::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.4);
-    z-index: -1;
-  }
-
-  /* When drawer is open, hamburger turns into X */
-  .hamburger.active span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-  }
-  .hamburger.active span:nth-child(2) {
-    opacity: 0;
-  }
-  .hamburger.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
-  }
-}
-/* ============================================
-   SKINNY + CLEAN MOBILE DRAWER
-   ============================================ */
-
-.hamburger {
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 48px;
-  height: 48px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 8px;
-  z-index: 200;
-}
-
-.hamburger span {
-  display: block;
-  width: 26px;
-  height: 3px;
-/* ============================================
-   VERTICAL MENU + NO HORIZONTAL PULL
-   ============================================ */
-
-.hamburger {
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 48px;
-  height: 48px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 8px;
-  z-index: 200;
-}
-
-.hamburger span {
-  display: block;
-  width: 26px;
-  height: 3px;
-  background-color: var(--primary-blue);
-  margin: 3px 0;
-  transition: all 0.3s ease;
-  border-radius: 2px;
-}
-
-/* Desktop */
-@media (min-width: 769px) {
-  .navbar {
+    display: flex !important;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    background: transparent;
+    border: none;
+    padding: 8px;
+    z-index: 200;
   }
-  .logo-container {
-    width: 100%;
-    justify-content: center;
-  }
-}
 
-/* Mobile - vertical menu + no horizontal drag */
-@media (max-width: 768px) {
+  .hamburger span {
+    display: block;
+    width: 26px;
+    height: 3px;
+    background-color: var(--primary-blue);
+    margin: 3px 0;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+  }
+
   header {
     min-height: 80px !important;
     padding: 12px 0 !important;
@@ -727,11 +600,6 @@ footer a:hover {
 
   .logo-container {
     width: auto !important;
-    justify-content: flex-start !important;
-  }
-
-  .hamburger {
-    display: flex !important;
   }
 
   .sidebar {
@@ -743,18 +611,18 @@ footer a:hover {
     max-width: 75vw !important;
     transform: translateX(-100%) !important;
     transition: transform 0.3s ease !important;
-    overflow-x: hidden !important;   /* prevents left/right pulling */
+    overflow-x: hidden !important;
   }
 
   .sidebar.open {
     transform: translateX(0) !important;
   }
 
-  /* Force vertical stack - one button on top of the other */
+  /* Force vertical stack - one button directly on top of the other */
   .sidebar .nav-links {
     display: flex !important;
     flex-direction: column !important;
-    flex-wrap: nowrap !important;     /* no wrapping into square */
+    flex-wrap: nowrap !important;
     gap: 0.9rem !important;
     list-style: none !important;
     margin: 0 !important;
@@ -762,13 +630,12 @@ footer a:hover {
   }
 
   .sidebar .nav-links a {
-    color: #2c3e50 !important;
+    color: #2c3e50 !important;          /* dark text, not grey */
     font-size: 1.08rem !important;
     padding: 12px 16px !important;
     border-radius: 8px !important;
     display: block !important;
-    width: 100% !important;           /* full width so it feels like a button */
-    transition: all 0.2s ease !important;
+    width: 100% !important;
     text-decoration: none !important;
     box-sizing: border-box !important;
   }
