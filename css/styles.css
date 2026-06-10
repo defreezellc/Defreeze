@@ -648,3 +648,69 @@ footer a:hover {
     transform: rotate(-45deg) translate(5px, -5px);
   }
 }
+/* ============================================
+   FIX: Header / Logo Centering + Hamburger Visibility
+   ============================================ */
+
+/* Base state: Hamburger hidden on desktop */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 200;
+}
+
+.hamburger span {
+  display: block;
+  width: 26px;
+  height: 3px;
+  background-color: var(--primary-blue);
+  margin: 3px 0;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+/* Desktop: Keep logo nicely centered */
+@media (min-width: 769px) {
+  .navbar {
+    justify-content: center;
+  }
+  
+  .logo-container {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Mobile: Show hamburger + fix layout */
+@media (max-width: 768px) {
+  header {
+    min-height: 80px;
+    padding: 12px 0;
+  }
+
+  .logo-img {
+    height: 60px;
+  }
+
+  .navbar {
+    justify-content: space-between;
+    padding: 0 16px;
+  }
+
+  .logo-container {
+    width: auto;
+    justify-content: flex-start;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
