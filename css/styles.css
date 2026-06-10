@@ -649,7 +649,7 @@ footer a:hover {
   }
 }
 /* ============================================
-   HAMBURGER + IMPROVED MOBILE DRAWER (stronger version)
+   SKINNY + CLEAN MOBILE DRAWER
    ============================================ */
 
 .hamburger {
@@ -676,7 +676,7 @@ footer a:hover {
   border-radius: 2px;
 }
 
-/* Desktop centering */
+/* Desktop */
 @media (min-width: 769px) {
   .navbar {
     justify-content: center;
@@ -687,7 +687,7 @@ footer a:hover {
   }
 }
 
-/* Mobile drawer improvements */
+/* Mobile - skinnier sidebar */
 @media (max-width: 768px) {
   header {
     min-height: 80px !important;
@@ -715,10 +715,10 @@ footer a:hover {
   .sidebar {
     background-color: #ffffff !important;
     border-right: 4px solid var(--primary-blue) !important;
-    box-shadow: 8px 0 30px rgba(0, 0, 0, 0.25) !important;
-    padding: 90px 24px 40px 24px !important;
-    width: 300px !important;
-    max-width: 82vw !important;
+    box-shadow: 6px 0 25px rgba(0, 0, 0, 0.2) !important;
+    padding: 90px 20px 40px 20px !important;   /* less side padding */
+    width: 260px !important;                   /* skinnier */
+    max-width: 75vw !important;
     transform: translateX(-100%) !important;
     transition: transform 0.3s ease !important;
   }
@@ -728,22 +728,24 @@ footer a:hover {
   }
 
   .sidebar .nav-links {
-    gap: 1.25rem !important;
+    gap: 0.9rem !important;
   }
 
   .sidebar .nav-links a {
-    font-size: 1.15rem !important;
-    padding: 14px 18px !important;
+    color: #2c3e50 !important;
+    font-size: 1.08rem !important;
+    padding: 12px 16px !important;            /* less horizontal padding */
     border-radius: 8px !important;
     display: block !important;
     transition: all 0.2s ease !important;
+    text-decoration: none !important;
   }
 
   .sidebar .nav-links a:hover,
   .sidebar .nav-links a:active {
     background-color: #f0f4f8 !important;
-    color: var(--accent-red) !important;
-    transform: translateX(8px) !important;
+    color: var(--primary-blue) !important;
+    transform: translateX(6px) !important;
   }
 
   .sidebar.open::before {
@@ -753,12 +755,13 @@ footer a:hover {
     left: 0 !important;
     width: 100vw !important;
     height: 100vh !important;
-    background: rgba(0, 0, 0, 0.6) !important;
-    backdrop-filter: blur(3px) !important;
+    background: rgba(0, 0, 0, 0.45) !important;
+    backdrop-filter: blur(2px) !important;
     z-index: -1 !important;
   }
 
   .hamburger.active span {
     background-color: var(--accent-red) !important;
   }
+}
 }
