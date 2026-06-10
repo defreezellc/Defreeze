@@ -444,7 +444,7 @@ footer a:hover {
     color: #ff4555;
 }
 
-/* ===== RESPONSIVE DESIGN (updated for sidebar) ===== */
+/* ===== RESPONSIVE DESIGN - CLEANED ===== */
 @media (max-width: 1024px) {
     .content-wrapper {
         flex-direction: column;
@@ -463,16 +463,15 @@ footer a:hover {
         box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     }
     
+    /* Removed the row/wrap rule that was breaking vertical layout on phones */
     .sidebar .nav-links {
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-        justify-content: center;
+        flex-direction: column;
+        gap: 0.75rem;
     }
     
     .sidebar .nav-links a {
-        text-align: center;
-        padding: 0.75rem 1.25rem;
+        text-align: left;
+        padding: 1rem 1.5rem;
         font-size: 1rem;
     }
     
@@ -483,11 +482,115 @@ footer a:hover {
 }
 
 @media (max-width: 768px) {
-    .nav-links {
-        gap: 1rem;
-        font-size: 0.9rem;
+    /* HAMBURGER BUTTON */
+    .hamburger {
+        display: flex !important;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 48px;
+        height: 48px;
+        background: transparent;
+        border: none;
+        padding: 8px;
+        z-index: 200;
     }
 
+    .hamburger span {
+        display: block;
+        width: 26px;
+        height: 3px;
+        background-color: var(--primary-blue);
+        margin: 3px 0;
+        transition: all 0.3s ease;
+        border-radius: 2px;
+    }
+
+    header {
+        min-height: 80px !important;
+        padding: 12px 0 !important;
+    }
+
+    .logo-img {
+        height: 60px !important;
+    }
+
+    .navbar {
+        justify-content: space-between !important;
+        padding: 0 16px !important;
+    }
+
+    .logo-container {
+        width: auto !important;
+    }
+
+    /* SKINNY VERTICAL DRAWER */
+    .sidebar {
+        background-color: #ffffff !important;
+        border-right: 4px solid var(--primary-blue) !important;
+        box-shadow: 6px 0 25px rgba(0, 0, 0, 0.2) !important;
+        padding: 90px 20px 40px 20px !important;
+        width: 260px !important;
+        max-width: 75vw !important;
+        transform: translateX(-100%) !important;
+        transition: transform 0.3s ease !important;
+        overflow-x: hidden !important;
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        height: 100vh !important;
+        z-index: 150 !important;
+    }
+
+    .sidebar.open {
+        transform: translateX(0) !important;
+    }
+
+    .sidebar .nav-links {
+        display: flex !important;
+        flex-direction: column !important;
+        flex-wrap: nowrap !important;
+        gap: 0.9rem !important;
+        list-style: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .sidebar .nav-links a {
+        color: #2c3e50 !important;
+        font-size: 1.08rem !important;
+        padding: 12px 16px !important;
+        border-radius: 8px !important;
+        display: block !important;
+        width: 100% !important;
+        text-decoration: none !important;
+        box-sizing: border-box !important;
+    }
+
+    .sidebar .nav-links a:hover,
+    .sidebar .nav-links a:active {
+        background-color: #f0f4f8 !important;
+        color: var(--primary-blue) !important;
+        transform: translateX(6px) !important;
+    }
+
+    .sidebar.open::before {
+        content: '' !important;
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100vw !important;
+        height: 100vh !important;
+        background: rgba(0, 0, 0, 0.45) !important;
+        backdrop-filter: blur(2px) !important;
+        z-index: -1 !important;
+    }
+
+    .hamburger.active span {
+        background-color: var(--accent-red) !important;
+    }
+
+    /* General mobile tweaks */
     .hero {
         grid-template-columns: 1fr;
         padding: 50px 0;
@@ -525,14 +628,6 @@ footer a:hover {
     .contact {
         padding: 60px 0;
     }
-
-    .logo-img {
-        height: 120px;
-    }
-
-    header {
-        min-height: 150px;
-    }
 }
 
 @media (max-width: 480px) {
@@ -540,126 +635,12 @@ footer a:hover {
         font-size: 1.5rem;
     }
 
-    .nav-links {
-        gap: 0.8rem;
-        font-size: 0.8rem;
-    }
-
     .logo-img {
-        height: 65px;
+        height: 65px !important;
     }
 
     .cta-button {
         padding: 0.8rem 1.5rem;
         font-size: 0.95rem;
     }
-}
-/* HAMBURGER + VERTICAL MENU - CLEAN VERSION */
-
-.hamburger {
-  display: none !important;
-}
-
-@media (max-width: 768px) {
-  .hamburger {
-    display: flex !important;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 48px;
-    height: 48px;
-    background: transparent;
-    border: none;
-    padding: 8px;
-    z-index: 200;
-  }
-
-  .hamburger span {
-    display: block;
-    width: 26px;
-    height: 3px;
-    background-color: var(--primary-blue);
-    margin: 3px 0;
-    transition: all 0.3s ease;
-    border-radius: 2px;
-  }
-
-  header {
-    min-height: 80px !important;
-    padding: 12px 0 !important;
-  }
-
-  .logo-img {
-    height: 60px !important;
-  }
-
-  .navbar {
-    justify-content: space-between !important;
-    padding: 0 16px !important;
-  }
-
-  .logo-container {
-    width: auto !important;
-  }
-
-  .sidebar {
-    background-color: #ffffff !important;
-    border-right: 4px solid var(--primary-blue) !important;
-    box-shadow: 6px 0 25px rgba(0, 0, 0, 0.2) !important;
-    padding: 90px 20px 40px 20px !important;
-    width: 260px !important;
-    max-width: 75vw !important;
-    transform: translateX(-100%) !important;
-    transition: transform 0.3s ease !important;
-    overflow-x: hidden !important;
-  }
-
-  .sidebar.open {
-    transform: translateX(0) !important;
-  }
-
-  /* Force vertical stack - one button directly on top of the other */
-  .sidebar .nav-links {
-    display: flex !important;
-    flex-direction: column !important;
-    flex-wrap: nowrap !important;
-    gap: 0.9rem !important;
-    list-style: none !important;
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-
-  .sidebar .nav-links a {
-    color: #2c3e50 !important;          /* dark text, not grey */
-    font-size: 1.08rem !important;
-    padding: 12px 16px !important;
-    border-radius: 8px !important;
-    display: block !important;
-    width: 100% !important;
-    text-decoration: none !important;
-    box-sizing: border-box !important;
-  }
-
-  .sidebar .nav-links a:hover,
-  .sidebar .nav-links a:active {
-    background-color: #f0f4f8 !important;
-    color: var(--primary-blue) !important;
-    transform: translateX(6px) !important;
-  }
-
-  .sidebar.open::before {
-    content: '' !important;
-    position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-    width: 100vw !important;
-    height: 100vh !important;
-    background: rgba(0, 0, 0, 0.45) !important;
-    backdrop-filter: blur(2px) !important;
-    z-index: -1 !important;
-  }
-
-  .hamburger.active span {
-    background-color: var(--accent-red) !important;
-  }
 }
