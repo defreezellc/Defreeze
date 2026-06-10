@@ -642,14 +642,14 @@ footer a:hover {
         padding: 0.8rem 1.5rem;
         font-size: 0.95rem;
     }
-/* MOBILE DRAWER - FINAL COLOR FIX (white bg + dark text) */
+/* === MOBILE DRAWER COLOR FIX (white background + dark text) === */
 @media (max-width: 768px) {
   .sidebar {
     background-color: #ffffff !important;
   }
 
   .sidebar .nav-links a {
-    color: #2c3e50 !important;           /* dark text, not grey */
+    color: #2c3e50 !important;
     background-color: transparent !important;
   }
 
