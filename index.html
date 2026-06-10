@@ -9,7 +9,7 @@
   
   <!-- Page Title & Meta Description for SEO -->
   <title>DeFreeze Heating and Cooling, LLC | HVAC Taos County &amp; Northern New Mexico</title>
-  <meta name="description" content="Licensed HVAC contractor in Taos County &amp; Northern New Mexico. Professional heating, cooling, refrigeration, mini-split installation &amp; repair. 24/7 emergency service. (575) 779-5277">
+  <meta name="description" content="Licensed HVAC contractor in Taos County &amp; Northern New Mexico. Professional heating, cooling, refrigeration, mini-split installation &amp; repair. 24/7 emer[...]
   
   <!-- Open Graph / Social Media Meta Tags -->
   <meta property="og:title" content="DeFreeze Heating and Cooling, LLC | HVAC Taos &amp; Northern NM">
@@ -67,13 +67,21 @@
 <body>
   <!-- ================================================================
        HEADER SECTION
-       Logo spans full width of header
+       Logo + Horizontal Navigation (Desktop) + Hamburger (Mobile)
        ================================================================ -->
   <header>
     <nav class="navbar">
       <div class="logo-container">
         <img src="Images/Defreeze-Logo.png" alt="DeFreeze Heating &amp; Cooling Logo" class="logo-img">
       </div>
+
+      <!-- Horizontal Navigation (Desktop) / Hidden on Mobile -->
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
 
       <!-- Hamburger Menu Button (Mobile Only) -->
       <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
@@ -86,13 +94,13 @@
 
   <!-- ================================================================
        MAIN CONTENT WRAPPER
-       Flexbox container: sidebar + main content side-by-side
+       Flexbox container: sidebar (mobile drawer) + main content
        ================================================================ -->
   <div class="content-wrapper">
     
     <!-- ================================================================
-         SIDEBAR NAVIGATION
-         Sticky navigation that transforms into mobile drawer
+         SIDEBAR NAVIGATION (Mobile Drawer)
+         Hidden by default, transforms to slide-out drawer on mobile
          ================================================================ -->
     <aside class="sidebar">
       <ul class="nav-links">
@@ -188,7 +196,7 @@
               <!-- About Text Column -->
               <div class="about-text">
                 <h2>Why Choose DeFreeze?</h2>
-                <p>DeFreeze Heating and Cooling, LLC specializes in professional Heating, Cooling, and Refrigeration services throughout Northern New Mexico. We serve Commercial and Residential clients with licensed, insured, and experienced technicians dedicated to your comfort and satisfaction.</p>
+                <p>DeFreeze Heating and Cooling, LLC specializes in professional Heating, Cooling, and Refrigeration services throughout Northern New Mexico. We serve Commercial and Residential c[...]
                 
                 <!-- Key Benefits List -->
                 <ul class="benefits-list">
