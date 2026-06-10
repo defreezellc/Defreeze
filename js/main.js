@@ -12,16 +12,5 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Handle contact form submission
-const contactForm = document.querySelector('.contact-form');
-if (contactForm) {
-    contactForm.addEventListener('submit', function (e) {
-        e.preventDefault();
-        // Here you would typically send the form data to a server
-        alert('Thank you for your message! We will get back to you soon.');
-        contactForm.reset();
-    });
-}
-
 // Log when page loads
 console.log('DeFreeze Heating and Cooling website loaded');
